@@ -16,12 +16,15 @@ download_data <- function(url, destfile, method , force = FALSE) {
 }
 
 ensure_package_ <- function(pkgname) {
-  pname <- pkgname
-  pkg_exists <- eval(paste("require(",pname,")"))
-  if (!require(pname)){
-    install.packages(pname, dependencies = TRUE)
-    require(pname)
+  if (!suppressWarnings(require(pkgname, quietly = TRUE, character.only = TRUE))){
+    install.packages(pkgname, dependencies = TRUE)
+    require(pkgname, character.only = TRUE)
   } else {
-    require(pname)
+    require(pkgname, character.only = TRUE)
   }
+}
+
+import_features <- function() {
+  features <- readr::read_delim("data/UCI HAR Dataset/features.txt", delim=" ", col_names = FALSE)
+  unlist(features[,2], use.names = F)
 }
