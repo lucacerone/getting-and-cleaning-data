@@ -19,3 +19,4 @@ Once all the packages and data are available the scripts does the following:
 - repeat the same for the test
 - combine tidy train and tidy test in a dataset
 - write the tidy dataset to disk (data/tidy_dataset.txt)
+- create a derived dataset built averaging the various measurements per each subject and activity.
