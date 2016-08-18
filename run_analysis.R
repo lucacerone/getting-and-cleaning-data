@@ -70,4 +70,4 @@ write.table(dataset, file = "data/tidy_dataset.txt",col.names = TRUE, row.names 
 
 aggdata <- dataset %>% group_by(Subject,Activity) %>% summarise_each( funs(mean) ) %>% arrange(Subject,Activity)
 aggdata
-write.table(dataset, file = "data/aggregated_dataset.txt",col.names = TRUE, row.names = FALSE)
+write.table(aggdata, file = "data/aggregated_dataset.txt",col.names = TRUE, row.names = FALSE)
