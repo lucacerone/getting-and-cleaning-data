@@ -67,3 +67,7 @@ colnames(tidy_test) <- features_selected
 # Combine tidy train and test:
 dataset <- rbind(tidy_train,tidy_test)
 write.table(dataset, file = "data/tidy_dataset.txt",col.names = TRUE, row.names = FALSE)
+
+aggdata <- dataset %>% group_by(Subject,Activity) %>% summarise_each( funs(mean) ) %>% arrange(Subject,Activity)
+aggdata
+write.table(dataset, file = "data/aggregated_dataset.txt",col.names = TRUE, row.names = FALSE)
