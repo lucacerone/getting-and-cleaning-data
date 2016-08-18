@@ -18,4 +18,4 @@ Once all the packages and data are available the scripts does the following:
 - select only the required columns applying the tidy names
 - repeat the same for the test
 - combine tidy train and tidy test in a dataset
-- write the tidy dataset to disk (data/tidy_dataset.tsv)
+- write the tidy dataset to disk (data/tidy_dataset.txt)

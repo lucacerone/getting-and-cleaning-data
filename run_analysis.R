@@ -66,4 +66,4 @@ colnames(tidy_test) <- features_selected
 
 # Combine tidy train and test:
 dataset <- rbind(tidy_train,tidy_test)
-write_tsv(dataset, "data/tidy_dataset.tsv",col_names = T)
+write.table(dataset, file = "data/tidy_dataset.txt",col.names = TRUE, row.names = FALSE)
